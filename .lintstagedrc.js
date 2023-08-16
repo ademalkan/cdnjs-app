@@ -8,5 +8,5 @@ const buildEslintCommand = (filenames) =>
 const cypressRunCommand = "yarn run cypress run";
 
 module.exports = {
-  "*.{js,jsx,ts,tsx}": [buildEslintCommand],
+  "*.{js,jsx,ts,tsx}": [buildEslintCommand, cypressRunCommand],
 };
