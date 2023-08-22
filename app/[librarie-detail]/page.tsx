@@ -10,7 +10,6 @@ export async function getServerSideProps() {
 }
 
 const LibrarieDetail = ({ data }) => {
-  console.log(data);
   return <div>LibrarieDetail</div>;
 };
 
