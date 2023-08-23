@@ -1,22 +1,26 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { FetchLibrariesI } from "../libraries-store/interface";
+import { useGetOneByLibrarieQueryI } from "./types/useGetOneByLibrarieQuery";
+import { FetchLibrariesI } from "./types/useGetSearchLibrariesQuery";
 
 export const librariesApi = createApi({
   reducerPath: "librariesApi",
   refetchOnFocus: true,
   baseQuery: fetchBaseQuery({
-    baseUrl:
-      "https://api.cdnjs.com/libraries?fields=filename,description,version,github",
+    baseUrl: "https://api.cdnjs.com/libraries",
   }),
   endpoints: (builder) => ({
-    getLibraries: builder.query<FetchLibrariesI, null>({
-      query: () => "users",
+    getOneByLibrarie: builder.query<
+      useGetOneByLibrarieQueryI,
+      { librarie: string }
+    >({
+      query: (librarie) => `/${librarie.librarie}`,
     }),
     getSearchLibraries: builder.query<FetchLibrariesI, { search: string }>({
-      query: (search) => `&search=${search.search}`,
+      query: (search) =>
+        `?fields=filename,description,version,github&search=${search.search}`,
     }),
   }),
 });
 
-export const { useGetLibrariesQuery, useGetSearchLibrariesQuery } =
+export const { useGetOneByLibrarieQuery, useGetSearchLibrariesQuery } =
   librariesApi;

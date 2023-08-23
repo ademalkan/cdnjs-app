@@ -1,3 +1,5 @@
+import { showDataI } from "@/app/[librarieDetail]/interface";
+
 export const moreShowHelper = (
   text: string,
   maxTextLength: number = 50
@@ -8,3 +10,8 @@ export const moreShowHelper = (
     return text.slice(0, maxTextLength) + "...";
   }
 };
+
+export const addSpaceWithComma = (str: string[]): string => {
+  return str.join(", ");
+};
+

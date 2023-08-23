@@ -65,6 +65,6 @@ module.exports = {
     "prefer-const": "error",
     "prefer-template": "warn",
 
-    "dot-notation": 0,
+    "dot-notation": 0,  
   },
 };
