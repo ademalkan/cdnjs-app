@@ -41,7 +41,7 @@ module.exports = {
     "space-in-parens": "error",
     "space-infix-ops": "error",
     "space-unary-ops": "error",
-    quotes: ["error", "single"],
+    quotes: ["error"],
     //
     "max-len": ["error", { code: 80 }],
     "max-lines": ["error", { max: 500 }],

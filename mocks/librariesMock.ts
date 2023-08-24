@@ -1,4 +1,4 @@
-import { FetchLibrariesI } from "@/stores/libraries-store/interface";
+import { FetchLibrariesI } from "@/stores/services/types/useGetSearchLibrariesQuery";
 
 export const librariesMock: FetchLibrariesI = {
   results: [
