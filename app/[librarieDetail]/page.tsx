@@ -25,8 +25,8 @@ const LibrarieDetail = ({
         {error && <div>Error</div>}
         {(!isLoading || !isFetching) &&
           (data === undefined || data === null) && (
-            <div>No libraries available</div>
-          )}
+          <div>No libraries available</div>
+        )}
         {data && (
           <div>
             <h1 className="text-2xl font-semibold mb-4">{data.name}</h1>
@@ -70,7 +70,6 @@ const LibrarieDetail = ({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {" "}
                 Visit Homepage
               </Link>
               <Link
@@ -79,7 +78,6 @@ const LibrarieDetail = ({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {" "}
                 See Latest Version
               </Link>
               <Link
@@ -88,7 +86,6 @@ const LibrarieDetail = ({
                 download
                 rel="noopener noreferrer"
               >
-                {" "}
                 Download Latest Version
               </Link>
             </div>
