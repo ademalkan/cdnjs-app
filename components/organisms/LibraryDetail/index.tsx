@@ -55,10 +55,10 @@ const LibraryDetail = (props: LibraryDetailPropsI): React.ReactNode => {
           </p>
         </div>
       </div>
-      <div className="mt-6 text-center">
+      <div className="flex md:justify-center md:flex-row flex-col justify-between items-center  mt-6 text-center">
         <Link
           href={library.homepage || "#"}
-          className="text-white bg-slate-400 p-2 rounded-md"
+          className="text-white whitespace-nowrap w-full bg-slate-400 p-2 rounded-md"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -66,7 +66,7 @@ const LibraryDetail = (props: LibraryDetailPropsI): React.ReactNode => {
         </Link>
         <Link
           href={library.latest || "#"}
-          className="text-white bg-slate-400 p-2 rounded-md ml-1"
+          className="text-white whitespace-nowrap w-full mt-2 md:mt-0 bg-slate-400 p-2 rounded-md md:ml-1"
           target="_blank"
           rel="noopener noreferrer"
         >
