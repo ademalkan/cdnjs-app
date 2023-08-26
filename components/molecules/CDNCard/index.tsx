@@ -1,9 +1,9 @@
-import HoverAnimation from "@/components/animations/hoverAnimation";
+import HoverAnimation from "../../../components/animations/hoverAnimation";
 import React from "react";
 import Link from "next/link";
-import { LatestLinkIcon } from "@/components/icons/LatestLinkIcon";
-import { moreShowHelper } from "@/utils/helper";
-import { Library } from "@/stores/services/types/useGetSearchLibrariesQuery";
+import { LatestLinkIcon } from "../../../components/icons/LatestLinkIcon";
+import { moreShowHelper } from "../../../utils/helper";
+import { Library } from "../../../stores/services/types/useGetSearchLibrariesQuery";
 
 const CDNCard = ({ library }: { library: Library }): React.ReactNode => {
   return (

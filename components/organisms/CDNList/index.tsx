@@ -1,5 +1,5 @@
-import CDNCard from "@/components/molecules/CDNCard";
-import { Library } from "@/stores/services/types/useGetSearchLibrariesQuery";
+import CDNCard from "../../../components/molecules/CDNCard";
+import { Library } from "../../../stores/services/types/useGetSearchLibrariesQuery";
 import React from "react";
 
 const CDNList = ({

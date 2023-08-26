@@ -1,13 +1,8 @@
-import HoverAnimation from "@/components/animations/hoverAnimation";
-import React, { MouseEventHandler } from "react";
+import HoverAnimation from "../../../components/animations/hoverAnimation";
+import React from "react";
+import { MoreThanButtonPropsI } from "./interface";
 
-interface MoreThanButtonPropsI {
-  length: number;
-  showDataEnd: number;
-  moreShowDataHandler: MouseEventHandler<HTMLButtonElement>;
-}
-
-const MoreThanButton = (props: MoreThanButtonPropsI) => {
+const MoreThanButton = (props: MoreThanButtonPropsI): React.ReactNode => {
   const { length, showDataEnd, moreShowDataHandler } = props;
   return (
     <>
@@ -18,7 +13,6 @@ const MoreThanButton = (props: MoreThanButtonPropsI) => {
               className="bg-slate-400 rounded-md p-2 text-white"
               onClick={moreShowDataHandler}
             >
-              {" "}
               More Than
             </button>
           </HoverAnimation>
