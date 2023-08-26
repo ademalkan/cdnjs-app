@@ -7,6 +7,8 @@ import { showDataI } from "./[libraryDetail]/interface";
 import PageContentLoader from "@/components/molecules/PageContentLoader";
 import MoreThanButton from "@/components/atoms/MoreThanButton";
 import CDNList from "@/components/organisms/CDNList";
+import Image from "next/image";
+import ErrorContent from "@/components/molecules/ErrorContent";
 
 export default function Home(): React.ReactNode {
   const [searchText, setSearchText] = useState<string>("");
@@ -43,15 +45,28 @@ export default function Home(): React.ReactNode {
           </div>
         </HoverAnimation>
 
-        {data?.available && (
-          <h6 className="text-lg">Total CDN : {data.available}</h6>
+        {data?.available !== 0 && (
+          <h6 className="text-lg">Total CDN : {data?.available}</h6>
         )}
       </nav>
 
       {(isLoading || isFetching) && <PageContentLoader />}
-      {error && <div>Error:</div>}
-      {!isLoading || !isFetching || data === undefined || data === null || (
-        <div>No libraries available</div>
+      {error && <ErrorContent />}
+
+      {visibleData?.length === 0 && (
+        <div className="flex items-center justify-center flex-col h-3/5">
+          <Image
+            src={"/images/searchImage.gif"}
+            width={300}
+            height={100}
+            alt="Not Found Search"
+          />
+          <h4 className="text-xl">
+            No results were found for{" "}
+            <span className="font-bold">{searchText}</span>. try looking for
+            something else
+          </h4>
+        </div>
       )}
 
       <CDNList CDNListData={visibleData} />

@@ -21,13 +21,7 @@ const CDNCard = ({ library }: { library: Library }): React.ReactNode => {
           >
             {library?.name?.toLocaleLowerCase()}
             (v{library.version})
-            <Link
-              title="Go to latest version"
-              href={library?.latest || "#"}
-              target="_blank"
-            >
-              <LatestLinkIcon />
-            </Link>
+            <LatestLinkIcon />
           </div>
           <div className="mt-2 ">{moreShowHelper(library?.description)}</div>
         </div>
