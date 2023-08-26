@@ -20,7 +20,7 @@ const LibraryDetailPage = ({
   });
 
   return (
-    <div className="container mx-auto  w-4/6 md-w-11/12 py-8">
+    <div className="container mx-auto  w-11/12 md:w-4/6 py-8">
       <div className="card p-6 md:p-8 bg-white shadow-md rounded-lg">
         {(isLoading || isFetching) && <PageContentLoader />}
         {error && <ErrorContent />}

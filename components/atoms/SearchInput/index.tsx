@@ -1,20 +1,17 @@
 "use client";
-import { showDataI } from "@/app/[libraryDetail]/interface";
 import React, { FormEvent, JSX } from "react";
 
 interface SearchInputI {
   searchText?: string;
   setSearchText(searchText: string): void;
-  setShowData(showData: showDataI): void;
 }
 
 const SearchInput = (props: SearchInputI): JSX.Element => {
-  const { setSearchText, setShowData } = props;
+  const { setSearchText } = props;
 
   const searchHandler = (searchEvent: FormEvent<HTMLInputElement>): void => {
     const searchText = searchEvent.currentTarget.value ?? "";
     setSearchText(searchText);
-    setShowData({ showDataStart: 0, showDataEnd: 12 });
   };
 
   return (

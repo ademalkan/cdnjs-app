@@ -38,10 +38,7 @@ export default function Home(): React.ReactNode {
       <nav className="mb-6">
         <HoverAnimation whileHoverScaleAmount={1.05}>
           <div className="search">
-            <SearchInput
-              setSearchText={setSearchText}
-              setShowData={setShowData}
-            />
+            <SearchInput setSearchText={setSearchText} />
           </div>
         </HoverAnimation>
 
@@ -62,20 +59,23 @@ export default function Home(): React.ReactNode {
             alt="Not Found Search"
           />
           <h4 className="text-xl">
-            No results were found for{" "}
+            No results were found for
             <span className="font-bold">{searchText}</span>. try looking for
             something else
           </h4>
         </div>
       )}
 
-      <CDNList CDNListData={visibleData} />
-
-      <MoreThanButton
-        length={data?.results?.length || 0}
-        showDataEnd={showData.showDataEnd}
-        moreShowDataHandler={moreShowDataHandler}
-      />
+      {!isFetching && (
+        <>
+          <CDNList CDNListData={visibleData} />
+          <MoreThanButton
+            length={data?.results?.length || 0}
+            showDataEnd={showData.showDataEnd}
+            moreShowDataHandler={moreShowDataHandler}
+          />
+        </>
+      )}
     </main>
   );
 }
