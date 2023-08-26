@@ -33,6 +33,7 @@ export default function Home(): React.ReactNode {
     }));
   };
 
+
   return (
     <main className="w-11/12 m-auto my-6">
       <nav className="mb-6">
@@ -47,7 +48,6 @@ export default function Home(): React.ReactNode {
         )}
       </nav>
 
-      {(isLoading || isFetching) && <PageContentLoader />}
       {error && <ErrorContent />}
 
       {visibleData?.length === 0 && (
