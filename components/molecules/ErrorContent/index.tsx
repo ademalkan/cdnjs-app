@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-const ErrorContent = () => {
+const ErrorContent = (): React.ReactNode => {
   return (
     <div className="flex flex-col justify-center items-center">
       <Image alt="Error" width={250} height={250} src={"/images/404.gif"} />

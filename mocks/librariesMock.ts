@@ -1,6 +1,4 @@
-import {
-  Library,
-} from "@/stores/services/types/useGetSearchLibrariesQuery";
+import { Library } from "@/stores/services/types/useGetSearchLibrariesQuery";
 
 export const librariesMock: Library[] = [
   {

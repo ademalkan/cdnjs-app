@@ -6,7 +6,7 @@ interface SearchInputI {
   setSearchText(searchText: string): void;
 }
 
-const SearchInput = (props: SearchInputI): JSX.Element => {
+const SearchInput = (props: SearchInputI): React.ReactNode => {
   const { setSearchText } = props;
 
   const searchHandler = (searchEvent: FormEvent<HTMLInputElement>): void => {
