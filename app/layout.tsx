@@ -4,7 +4,8 @@ import { Inter } from "next/font/google";
 import styles from "./layout.module.css";
 import Header from "@/components/organisms/Header";
 import { Providers } from "@/stores/provider";
-import type React from "react";
+import React, { Suspense } from "react";
+import Loading from "./loading";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -25,7 +26,9 @@ export default async function RootLayout({
             <header className={styles.header}>
               <Header title="CDNJS APP" />
             </header>
-            <article className={styles.content}>{children}</article>
+            <Suspense fallback={<Loading />}>
+              <article className={styles.content}>{children}</article>
+            </Suspense>
             <footer className={styles.footer}></footer>
           </main>
         </Providers>
