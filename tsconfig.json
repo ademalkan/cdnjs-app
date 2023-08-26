@@ -1,10 +1,6 @@
 {
   "compilerOptions": {
-    "lib": [
-      "es2015",
-      "es2015.iterable",
-      "dom"
-    ],
+    "lib": ["es2015", "es2015.iterable", "dom"],
     "target": "es6",
     "module": "commonjs",
     "allowJs": true,
@@ -22,9 +18,7 @@
       }
     ],
     "paths": {
-      "@/*": [
-        "./*"
-      ]
+      "@/*": ["./*"]
     },
     "skipLibCheck": true,
     "moduleResolution": "node"
@@ -34,9 +28,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "cypress.config.js"
+    "cypress.config.js",
+    "cypress"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }
