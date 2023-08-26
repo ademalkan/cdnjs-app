@@ -9,6 +9,7 @@ import MoreThanButton from "@/components/atoms/MoreThanButton";
 import CDNList from "@/components/organisms/CDNList";
 import Image from "next/image";
 import ErrorContent from "@/components/molecules/ErrorContent";
+import ContentLoader from "react-content-loader";
 
 export default function Home(): React.ReactNode {
   const [searchText, setSearchText] = useState<string>("");
@@ -32,7 +33,6 @@ export default function Home(): React.ReactNode {
       showDataEnd: prevShowData.showDataEnd + 12,
     }));
   };
-
 
   return (
     <main className="w-11/12 m-auto my-6">
@@ -60,22 +60,18 @@ export default function Home(): React.ReactNode {
           />
           <h4 className="text-xl">
             No results were found for
-            <span className="font-bold">{searchText}</span>. try looking for
-            something else
+            <span className="font-bold inline-block ml-1">{searchText}</span>.
+            try looking for something else
           </h4>
         </div>
       )}
 
-      {!isFetching && (
-        <>
-          <CDNList CDNListData={visibleData} />
-          <MoreThanButton
-            length={data?.results?.length || 0}
-            showDataEnd={showData.showDataEnd}
-            moreShowDataHandler={moreShowDataHandler}
-          />
-        </>
-      )}
+      <CDNList CDNListData={visibleData} />
+      <MoreThanButton
+        length={data?.results?.length || 0}
+        showDataEnd={showData.showDataEnd}
+        moreShowDataHandler={moreShowDataHandler}
+      />
     </main>
   );
 }
